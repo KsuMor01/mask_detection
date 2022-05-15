@@ -61,22 +61,22 @@ print('\n=======LABELS=========\n')
 #     make_labels(paths['LABEL_MAP'], args.labels_custom)
 
 print('\n=======DATA=========\n')
-load_data(args.data_path)
+# load_data(args.data_path)
 
 print('\n=======PRETRAINED MODEL=========\n')
-load_pretrained_model(paths['PRETRAINED_MODEL'], paths['PRETRAINDED_DIR'])
+# load_pretrained_model(paths['PRETRAINED_MODEL'], paths['PRETRAINDED_DIR'])
 
 print('\n=======TFRECORDS=========\n')
-create_tfrecords(paths)
+# create_tfrecords(paths)
 
 print('\n=======CONFIG=========\n')
 # configure_pipeline(paths, args.num_train_steps)
 
 print('\n=======TRAIN=========\n')
-train_model(paths, args.num_train_steps)
+# train_model(paths, args.num_train_steps)
 
 print('\n=======FREEZE=========\n')
-freeze_graph(paths)
+# freeze_graph(paths)
 
 print('\n=======CONVERT=========\n')
 convert_model(paths, args.model_name)
