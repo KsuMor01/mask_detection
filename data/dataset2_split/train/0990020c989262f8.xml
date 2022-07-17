@@ -1,0 +1,8 @@
+<annotation>
+    <filename>0990020c989262f8.jpg</filename>
+    <size>
+        <width>320</width>
+        <height>320</height>
+        <depth>3</depth>
+    </size>
+<object><name>without_mask</name><bndbox><xmin>72</xmin><ymin>119</ymin><xmax>144</xmax><ymax>214</ymax></bndbox></object></annotation>

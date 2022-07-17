@@ -1,0 +1,8 @@
+<annotation>
+    <filename>385bc2f13c1c8d31.jpg</filename>
+    <size>
+        <width>320</width>
+        <height>320</height>
+        <depth>3</depth>
+    </size>
+<object><name>without_mask</name><bndbox><xmin>72</xmin><ymin>27</ymin><xmax>111</xmax><ymax>76</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>162</xmin><ymin>38</ymin><xmax>203</xmax><ymax>96</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>247</xmin><ymin>0</ymin><xmax>267</xmax><ymax>7</ymax></bndbox></object></annotation>

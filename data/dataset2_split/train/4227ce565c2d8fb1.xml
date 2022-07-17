@@ -1,0 +1,8 @@
+<annotation>
+    <filename>4227ce565c2d8fb1.jpg</filename>
+    <size>
+        <width>320</width>
+        <height>320</height>
+        <depth>3</depth>
+    </size>
+<object><name>without_mask</name><bndbox><xmin>51</xmin><ymin>61</ymin><xmax>85</xmax><ymax>106</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>116</xmin><ymin>31</ymin><xmax>148</xmax><ymax>72</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>168</xmin><ymin>36</ymin><xmax>199</xmax><ymax>73</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>211</xmin><ymin>56</ymin><xmax>244</xmax><ymax>103</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>250</xmin><ymin>57</ymin><xmax>295</xmax><ymax>106</ymax></bndbox></object></annotation>

@@ -1,0 +1,8 @@
+<annotation>
+    <filename>141a942ad44d3080.jpg</filename>
+    <size>
+        <width>320</width>
+        <height>320</height>
+        <depth>3</depth>
+    </size>
+<object><name>without_mask</name><bndbox><xmin>15</xmin><ymin>51</ymin><xmax>26</xmax><ymax>72</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>18</xmin><ymin>54</ymin><xmax>27</xmax><ymax>72</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>108</xmin><ymin>2</ymin><xmax>143</xmax><ymax>45</ymax></bndbox></object><object><name>without_mask</name><bndbox><xmin>198</xmin><ymin>45</ymin><xmax>201</xmax><ymax>62</ymax></bndbox></object></annotation>

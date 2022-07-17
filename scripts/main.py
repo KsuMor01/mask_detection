@@ -1,8 +1,6 @@
 '''
 This is main script for mask_detection project
 
-*** info about parser ***
-
 You can train, convert and test mask_detection tflite model
 '''
 
@@ -12,9 +10,9 @@ import argparse
 
 
 parser = argparse.ArgumentParser(description='Settings for mask_detection')
-parser.add_argument('-d', '--data_path', type=str, default='../data/dataset_full/',
+parser.add_argument('-d', '--data_path', type=str, default='../data/dataset2_split/',
                     help='path to the data')
-parser.add_argument('--model_name', type=str, default='test_model_320',
+parser.add_argument('--model_name', type=str, default='test_model_7',
                     help='name of the model')
 parser.add_argument('--pretrained_model', type=str, default='ssd_mobilenet_v2_320x320_coco17_tpu-8',
                     help='name of the model of the TensorFlow 2 Detection Model Zoo')
@@ -22,8 +20,6 @@ parser.add_argument('--labels_custom', type=bool, default=False,
                     help='make this True to put your own labels list')
 parser.add_argument('--num_train_steps', type=bool, default=10000,
                     help='num of train steps')
-
-#TODO if arg != downloaded -> load_data | load_pretrained_model | pipeline | tfrecords
 
 args = parser.parse_args()
 print('\n=======ARGS=========\n')
@@ -58,7 +54,7 @@ for path in paths.items():
 
 print('\n=======LABELS=========\n')
 # if(args.labels_custom):
-#     make_labels(paths['LABEL_MAP'], args.labels_custom)
+    # make_labels(paths['LABEL_MAP'], args.labels_custom)
 
 print('\n=======DATA=========\n')
 # load_data(args.data_path)
@@ -73,7 +69,7 @@ print('\n=======CONFIG=========\n')
 # configure_pipeline(paths, args.num_train_steps)
 
 print('\n=======TRAIN=========\n')
-# train_model(paths, args.num_train_steps)
+# train_model(paths, 1000)
 
 print('\n=======FREEZE=========\n')
 # freeze_graph(paths)

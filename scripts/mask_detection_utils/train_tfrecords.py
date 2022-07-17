@@ -13,11 +13,12 @@ from google.protobuf import text_format
 
 def make_labels(label_map, custom):
     print('Creating label_map')
+    labels = []
 
-    #  labels = [{'name': 'with_mask', 'id': 1}, {'name': 'without_mask', 'id': 2},
+    labels = [{'name': 'with_mask', 'id': 1}, {'name': 'without_mask', 'id': 2}, ]
     #  {'name': 'mask_weared_incorrect', 'id': 3}]
 
-    labels = []
+
     if custom:
         print('Input num of labels:')
         n = int(input())
@@ -115,7 +116,7 @@ def configure_pipeline(paths, num_train_steps):
         text_format.Merge(proto_str, pipeline_config)
     config = config_util.get_configs_from_pipeline_file(paths['PIPELINE'])
     pipeline_config.eval_config.max_evals = 1
-    pipeline_config.model.ssd.num_classes = 3 #TODO
+    pipeline_config.model.ssd.num_classes = 3
     pipeline_config.train_config.batch_size = 16
     pipeline_config.train_config.fine_tune_checkpoint = os.path.join(paths['PRETRAINDED_DIR'],
                                                                      paths['PRETRAINED_MODEL'], 'checkpoint', 'ckpt-0')
@@ -152,7 +153,6 @@ def train_model(paths, num_train_steps):
 
 
 def freeze_graph(paths):
-    #TODO create freeze dir
     #!python {FREEZE_SCRIPT} --input_type=image_tensor --pipeline_config_path={files['PIPELINE_CONFIG']} --trained_checkpoint_dir={paths['CHECKPOINT_PATH']} --output_directory={paths['OUTPUT_PATH']}
     print('freezing graph')
     if not os.path.exists(paths['FREEZE_DIR']):
@@ -179,12 +179,13 @@ def convert_model(paths, model_name):
     os.system(command)
 
     images_paths = []
-    for currentFile in Path(paths['DATA_PATH'] + 'train/').glob('*.jpg'):
+    for currentFile in Path(paths['DATA_PATH'] + 'test/').glob('*.jpg'):
         currentFileStr = str(currentFile)
         images_paths.append(currentFileStr)
         print(currentFile)
     images_paths.sort()
     image_size = 320
+    image_size = 300
 
     def rep_data_gen():
         a = []
@@ -206,8 +207,10 @@ def convert_model(paths, model_name):
 
     converter = tf.lite.TFLiteConverter.from_saved_model(paths['TFLITE_DIR'] + 'saved_model')
     converter.optimizations = [tf.lite.Optimize.DEFAULT]
-    converter.representative_dataset = rep_data_gen
-    converter.inference_output_type = tf.float32
+    # converter.representative_dataset = rep_data_gen
+    # converter.inference_output_type = tf.float32
+    # converter.inference_output_type = tf.uint8
+    # converter.inference_output_type = tf.uint8
     tflite_model = converter.convert()
 
     print('\nsaving model')
